@@ -1,1 +1,0 @@
-// Client application entry point
