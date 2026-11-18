@@ -27,7 +27,7 @@ export default function App(){
  const estimate=useMemo(()=>selected?Number(selected.unit_price)*Number(quantity||0):0,[selected,quantity]);
  async function placeOrder(e){
   e.preventDefault(); setNotice('');
-  if(!selected || !/^https:\\/\\//i.test(targetUrl)){setNotice('कृपया सेवा चुनें और HTTPS लिंक डालें।');return;}
+  (!targetUrl || !targetUrl.startsWith('http'))
   if(quantity<selected.min_quantity||quantity>selected.max_quantity){setNotice(`Quantity ${selected.min_quantity} से ${selected.max_quantity} के बीच रखें।`);return;}
   setLoading(true);
   try{
