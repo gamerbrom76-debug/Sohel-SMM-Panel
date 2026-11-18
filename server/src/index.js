@@ -4,7 +4,7 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 import { pool } from "./db.js";
 import { submitProviderOrder } from "./provider.js";
-import authRoutes from './auth.js';.
+import authRoutes from './auth.js';
 dotenv.config();
 
 const app = express();
