@@ -4,11 +4,13 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 import { pool } from "./db.js";
 import { submitProviderOrder } from "./provider.js";
+import authRoutes from './auth.js';.
 dotenv.config();
 
 const app = express();
 app.use(helmet());
 app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "http://localhost:5173" }));
+app.use('/auth', authRoutes);.
 app.use(express.json({ limit: "200kb" }));
 
 app.get("/api/health", (_req, res) => res.json({ ok: true, service: "sohel-smm-api" }));
