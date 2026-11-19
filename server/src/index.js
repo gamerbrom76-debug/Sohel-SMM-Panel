@@ -316,7 +316,7 @@ app.get('/api/admin/summary', async (req, res) => {
 
 // START SERVER
 const port = process.env.PORT || 4000;
-initDb();
+
 app.listen(port, () => {
   console.log(`Sohel SMM API running on port ${port}`);
 });
