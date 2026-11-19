@@ -6,4 +6,4 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const sql = fs.readFileSync(path.join(here, "schema.sql"), "utf8");
 try { await pool.query(sql); console.log("Database schema created."); }
 catch (e) { console.error(e); process.exitCode = 1; }
-finally { await pool.end(); }
+
